@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>TestGuru</title>
+  <style>
+    body {
+      /* Background */
+      background: url('background.jpg') center center / cover no-repeat;
+      height: 100vh;
+      width: 100%;
+      font-family: Times;
+    }
+    .container {
+      /* Align sub-items to top */
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      position: relative;
+      left: 200px;
+      height: 80vh;
+      width: 80%;
+    }
+
+    .container__media {
+      margin-right: 16px;
+      width: 45vh;
+      height: 45vh;
+    }
+
+    .container__content {
+      flex: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="container__media">
+      <img style='height: 100%; width: 100%; object-fit: contain' src="/copybara.jpeg" alt="copybara">
+    </div>
+
+    <div class="container__content">
+      <h2 style="font-size: 30px; text-align: centered">Об авторе</h2> 
+      <p style="font-size: 20px">
+        Юнина Екатерина. Санкт-Петербург, Сингапур.<br>
+        Студент онлайн-школы Thinknetika.<br>
+        Начала с работы с человеческим мозгом, а продолжила с вебом.
+    </p>
+    <a style="font-size: 17px" href="https://github.com/ekateriniy">GitHub</a>
+    </div>
+</div> 
+</body>
+</html>
+
+
