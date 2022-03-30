@@ -8,6 +8,8 @@ Bundler.require(*Rails.groups)
 
 module TestGuru
   class Application < Rails::Application
+    VERSION = '0.1.0'.freeze
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
 
@@ -15,7 +17,7 @@ module TestGuru
     #
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
-    #
+    
     config.time_zone = "Singapore"
     config.i18n.default_locale = :ru
     config.i18n.available_locales = [:en, :ru]
