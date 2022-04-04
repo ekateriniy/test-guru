@@ -141,7 +141,7 @@ Answer.create!(
   ]
 )
 
-TestsUsers.create!(
+TestsUser.create!(
     [
         {user_id: 1, test_id: 2},
         {user_id: 1, test_id: 5},
