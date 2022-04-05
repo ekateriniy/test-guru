@@ -39,7 +39,7 @@ tests = Test.create!(
   ]
 )
 
-Question.create!(
+questions = Question.create!(
   [
     {body: 'What is the capital of Brazil?', test: tests[0]},
     {body: 'How many legs does a butterfly have?', test: tests[9]},
@@ -143,6 +143,6 @@ TestsUser.create!(
         {user: users[0], test: tests[4]},
         {user: users[0], test: tests[2]},
         {user: users[3], test: tests[0]},
-        {user: users[3], test: tests[3},
+        {user: users[3], test: tests[3]}
     ]
 )
