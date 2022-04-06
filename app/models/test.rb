@@ -10,4 +10,14 @@ class Test < ApplicationRecord
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
   scope :titles_by_category_desc, -> (category) { joins(:category).where(categories: {title: category}).order(title: :desc) }
+
+  validates :title, presence: true
+  validates :level, numericality: { only_integer: true, greater_than: 0 }
+  validate :validate_uniq_title_and_level
+
+  private
+
+  def validate_uniq_title_and_level
+    errors.add(:uniq_title_level, 'Test with these title and level must be uniq') unless Test.where(title: title, level: level).empty?
+  end
 end
