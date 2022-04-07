@@ -6,14 +6,14 @@ class Test < ApplicationRecord
   has_many :tests_users
   has_many :users, through: :tests_users, dependent: :destroy
 
-  scope :easy, -> { where(level: 0..1) }
-  scope :medium, -> { where(level: 2..4) }
-  scope :hard, -> { where(level: 5..Float::INFINITY) }
-  scope :titles_by_category_desc, -> (category) { joins(:category).where(categories: {title: category}).order(title: :desc) }
-
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
   validate :validate_uniq_title_and_level
+
+  scope :easy, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+  scope :titles_by_category_desc, -> (category) { joins(:category).where(categories: {title: category}).order(title: :desc).pluck(:title) }
 
   private
 
