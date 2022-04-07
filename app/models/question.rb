@@ -4,6 +4,5 @@ class Question < ApplicationRecord
   has_many :answers, dependent: :destroy
 
   validates :body, presence: true
-  validates_associated :answers
-  validates_presence_of :answers # min 1 answer 
+  validates_presence_of :answers, on: :create
 end
