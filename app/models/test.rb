@@ -8,16 +8,10 @@ class Test < ApplicationRecord
 
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0 }
-  validate :validate_uniq_title_and_level
+  validates :title, uniqueness: { scope: :level, message: 'there must be uniq title and level' }
 
   scope :easy, -> { where(level: 0..1) }
   scope :medium, -> { where(level: 2..4) }
   scope :hard, -> { where(level: 5..Float::INFINITY) }
   scope :titles_by_category_desc, -> (category) { joins(:category).where(categories: {title: category}).order(title: :desc).pluck(:title) }
-
-  private
-
-  def validate_uniq_title_and_level
-    errors.add(:uniq_title_level, 'Test with these title and level must be uniq') unless Test.where(title: title, level: level).empty?
-  end
 end
