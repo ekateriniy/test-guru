@@ -1,6 +1,5 @@
 class QuestionsController < ApplicationController
-  # обратный вызов при поиске теста в контроллере ресурса вопросов
-  before_action :find_test
+  before_action :find_test, only: [:index, :new, :create, :destroy]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
@@ -20,15 +19,16 @@ class QuestionsController < ApplicationController
     @question = @test.questions.new(question_params)
 
     if @question.save
-      redirect_to test_questions_path
+      redirect_to @question
     else
-      redirect_to new_test_question_path
+      flash[:question_errors] = @question.errors.full_messages
+      redirect_to new_test_question_path(@test)
     end
   end
 
   def destroy
     @question = Question.destroy(params[:id])
-    redirect_to test_questions_path
+    redirect_to test_questions_path(@test)
   end
 
   private
