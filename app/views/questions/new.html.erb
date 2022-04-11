@@ -1,5 +1,4 @@
 <h2>Create a new question</h2>
-<%= flash[:question_errors].join("\n") if flash[:question_errors] %>
 <form action="/tests/<%= @test.id %>/questions" method="post">
   <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
   <p>
