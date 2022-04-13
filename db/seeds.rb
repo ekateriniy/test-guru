@@ -136,13 +136,3 @@ Answer.create!(
     {body: 'Italy', question: questions[21], correct: true}
   ]
 )
-
-# TestPassage.create!(
-#     [
-#         {user: users[0], test: tests[1]},
-#         {user: users[0], test: tests[4]},
-#         {user: users[0], test: tests[2]},
-#         {user: users[3], test: tests[0]},
-#         {user: users[3], test: tests[3]}
-#     ]
-# )
