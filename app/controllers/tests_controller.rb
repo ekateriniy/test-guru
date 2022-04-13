@@ -20,7 +20,7 @@ class TestsController < ApplicationController
     @test = Test.new(test_params)
     
     # temporaly adding 1st user from the db to the new test.author
-    @test.author = User.find(1)
+    @test.author = User.first
 
     if @test.save
       redirect_to @test
