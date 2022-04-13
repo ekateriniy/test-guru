@@ -137,12 +137,12 @@ Answer.create!(
   ]
 )
 
-TestsUser.create!(
-    [
-        {user: users[0], test: tests[1]},
-        {user: users[0], test: tests[4]},
-        {user: users[0], test: tests[2]},
-        {user: users[3], test: tests[0]},
-        {user: users[3], test: tests[3]}
-    ]
-)
+# TestPassage.create!(
+#     [
+#         {user: users[0], test: tests[1]},
+#         {user: users[0], test: tests[4]},
+#         {user: users[0], test: tests[2]},
+#         {user: users[3], test: tests[0]},
+#         {user: users[3], test: tests[3]}
+#     ]
+# )
