@@ -22,6 +22,10 @@ class TestPassage < ApplicationRecord
     test.questions.where('id <= ?', current_question_id).count
   end
 
+  def pass?
+    correct_questions / test.questions.count >= 0.85
+  end
+
   private
 
   def before_validation_set_first_question
