@@ -1,4 +1,6 @@
 class TestPassage < ApplicationRecord
+  SUCCESS_RATIO = 0.85
+
   belongs_to :user
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
@@ -11,9 +13,7 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    if correct_answer?(answer_ids)
-      self.correct_questions += 1
-    end
+    self.correct_questions += 1 if correct_answer?(answer_ids)
     
     save!
   end
@@ -23,7 +23,7 @@ class TestPassage < ApplicationRecord
   end
 
   def pass?
-    correct_questions / test.questions.count >= 0.85
+    correct_questions / test.questions.count >= SUCCESS_RATIO
   end
 
   private
