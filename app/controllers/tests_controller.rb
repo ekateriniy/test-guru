@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :find_test, only: [:show, :update, :edit, :destroy, :start]
+  before_action :set_test, only: [:show, :update, :edit, :destroy, :start]
 
   def index
     @tests = Test.all
@@ -51,7 +51,7 @@ class TestsController < ApplicationController
 
   private
 
-  def find_test
+  def set_test
     @test = Test.find(params[:id])
   end
 
