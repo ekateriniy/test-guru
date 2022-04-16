@@ -6,6 +6,9 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages, dependent: :destroy
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id, dependent: :destroy
 
+  validates :name, presence: true, length: {maximum: 100}
+  validate :validate_email
+
   has_secure_password
 
   def tests_on_level(level)
@@ -14,5 +17,13 @@ class User < ApplicationRecord
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
+  end
+
+  private
+
+  def validate_email
+    unless email =~ /\A[^@\s]+@[^@\s]+\z/ && User.find_by(email: email).nil?
+      errors.add(:email, 'has a wrong type')
+    end
   end
 end
