@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user!
+    cookies[:requested_path] = request.url
+
     unless current_user
       flash[:alert] = 'Verify your email and password and try again'
       redirect_to login_path
