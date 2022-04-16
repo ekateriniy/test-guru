@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :authenticate_user!, except: :destroy
+
   def new; end
 
   def create
@@ -11,5 +13,10 @@ class SessionsController < ApplicationController
       flash.now[:alert] = 'Wrong password and/or email, please try again'
       render :new
     end
+  end
+
+  def destroy
+    session.destroy
+    redirect_to login_path
   end
 end

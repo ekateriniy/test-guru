@@ -11,12 +11,21 @@
   </head>
 
   <body>
-    <% if logged_in? %>
-     <p class="nav user"> Welcome, <b><%= current_user.name %></b></p>
-    <% end %>
+    <ul class="nav ul">
+      <% if logged_in? %>
+        <li class="nav user"><%= link_to 'Sign Out', signout_path %></li>
+        <li class="nav user"> Welcome, <b><%= current_user.name %></b></li>
+      <% else %>
+        <li class="nav user"><%= link_to 'Sign In', signup_path %></li>
+        <li class="nav user"><%= link_to 'Log In', login_path %></li>
+      <% end %>
 
+      <li float: left><b><%= link_to 'TestGuru', root_path %></b></li>
+    </ul>
+
+    <p>
     <%= yield %>
-  
+    </p>
     <%= render 'shared/footer' %>
   </body>
 </html>

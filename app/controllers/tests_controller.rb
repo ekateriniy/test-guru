@@ -1,6 +1,4 @@
 class TestsController < ApplicationController
-  
-  before_action :authenticate_user!
   before_action :set_test, only: [:show, :update, :edit, :destroy, :start]
 
   def index
