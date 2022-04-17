@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :created_tests, class_name: 'Test', foreign_key: :author_id, dependent: :destroy
 
   validates :name, presence: true, length: {maximum: 100}
-  validate :validate_email
+  validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'is in wrong format' }
 
   has_secure_password
 
@@ -17,13 +17,5 @@ class User < ApplicationRecord
 
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
-  end
-
-  private
-
-  def validate_email
-    unless email =~ /\A[^@\s]+@[^@\s]+\z/ && User.find_by(email: email).nil?
-      errors.add(:email, 'has a wrong type')
-    end
   end
 end
