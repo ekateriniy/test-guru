@@ -13,7 +13,7 @@
   <body>
     <ul class="nav ul">
       <% if logged_in? %>
-        <li class="nav user"><%= link_to 'Sign Out', signout_path %></li>
+        <li class="nav user"><%= link_to 'Sign Out', signout_path, method: :delete %></li>
         <li class="nav user"><b> Welcome, <%= current_user.name %> Guru</b></li>
       <% else %>
         <li class="nav user"><%= link_to 'Sign In', signup_path %></li>
