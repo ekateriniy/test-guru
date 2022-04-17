@@ -7,7 +7,7 @@ module ApplicationHelper
     link_to repo.capitalize, "https://github.com/#{author}/#{repo}"
   end
 
-  def alert_flash_message
-    content_tag :p, flash[:alert], class: 'flash alert'
+  def flash_message(type)
+    content_tag :p, flash[type], class: "flash #{type}" if flash[type]
   end
 end
