@@ -14,7 +14,7 @@
     <ul class="nav ul">
       <% if user_signed_in? %>
         <li class="nav user"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <li class="nav user"><b> Welcome, <%= current_user.name %> Guru</b></li>
+        <li class="nav user"><b> Welcome, <%= current_user.first_name %> Guru</b></li>
       <% else %>
         <li class="nav user"><%= link_to 'Sign Un', new_user_registration_path %></li>
         <li class="nav user"><%= link_to 'Log In', new_user_session_path %></li>
