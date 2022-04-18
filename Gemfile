@@ -32,10 +32,10 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Authentication
 gem 'devise', '~> 4.0'
 
-# fix bug with email
-gem 'net-smtp' # to send email
-gem 'net-imap' # for rspec
-gem 'net-pop'  # for rspec
+# ex-default gems to work with emails
+gem 'net-smtp'
+gem 'net-imap'
+gem 'net-pop'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
