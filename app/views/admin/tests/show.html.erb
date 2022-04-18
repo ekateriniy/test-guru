@@ -1,0 +1,17 @@
+<p>
+<strong>Title: </strong>
+<%= @test.title.capitalize %>
+</p>
+
+<p>
+<strong>Level: </strong>
+<%= @test.level %>
+</p>
+
+<p>
+<%= render 'questions/list' %>
+<%= render partial: 'questions/question', collection: @test.questions %>
+</p>
+
+<%= link_to 'Edit test', edit_admin_test_path(@test) %> |
+<%= link_to 'Back to all tests', admin_tests_path %>
