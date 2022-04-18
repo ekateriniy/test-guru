@@ -19,9 +19,8 @@ class Admin::TestsController < Admin::BaseController
 
   def create
     @test = Test.new(test_params)
-    
-    # temporaly adding 1st user from the db to the new test.author
-    @test.author = User.first
+
+    @test.author = current_user
 
     if @test.save
       redirect_to @test
