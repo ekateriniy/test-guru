@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
     if current_user.is_a?(Admin)
       admin_tests_path
     else
-      flash[:notice] = "Привет, #{current_user.first_name}!"
       stored_location_for(resource) || root_path
     end
   end
