@@ -1,22 +1,8 @@
-class SessionsController < ApplicationController
-  skip_before_action :authenticate_user!, except: :destroy
-
-  def new; end
+class SessionsController < Devise::SessionsController
 
   def create
-    user = User.find_by(email: params[:email])
+    super
 
-    if user&.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect_to cookies.delete(:requested_path) || root_path
-    else
-      flash.now[:alert] = 'Wrong password and/or email, please try again'
-      render :new
-    end
-  end
-
-  def destroy
-    session.destroy
-    redirect_to login_path
+    flash[:notice] = "Привет, #{current_user.first_name}!" unless current_user.is_a?(Admin)
   end
 end
