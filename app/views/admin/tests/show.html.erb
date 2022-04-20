@@ -1,10 +1,10 @@
 <p>
-<strong>Title: </strong>
+<strong><%= t('tests.index.body.title') %>: </strong>
 <%= @test.title.capitalize %>
 </p>
 
 <p>
-<strong>Level: </strong>
+<strong><%= t('tests.index.body.level') %>: </strong>
 <%= @test.level %>
 </p>
 
@@ -12,5 +12,5 @@
 <%= render 'admin/questions/list' %>
 </p>
 
-<%= link_to 'Edit test', edit_admin_test_path(@test) %> |
-<%= link_to 'Back to all tests', admin_tests_path %>
+<%= link_to t('navigation.links.edit'), edit_admin_test_path(@test) %> |
+<%= link_to t('navigation.links.to_all_tests'), admin_tests_path %>

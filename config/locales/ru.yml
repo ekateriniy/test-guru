@@ -1,0 +1,67 @@
+ru:
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выберите:"
+
+  shared:
+    errors:
+      header:
+        one: "Обнаружена %{count} ошибка"
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        other: "Обнаружено %{count} ошибки"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      body:
+        title: "Название"
+        level: "Уровень"
+        questions: "Кол-во вопросов"
+        action: "Действие"
+    test: 
+      start_button: "Старт"
+
+  test_passages:
+    result:
+      header: "Тест %{title} был успешно завершен"
+      success_html: "Вы прошли тест! <br>Ваш результат:"
+      fail_html: "Вы не прошли тест. <br>Ваш результат:"
+    show:
+      header: "Вы проходите %{title} тест"
+      current_question: "Вопрос %{current} из %{total}"
+      submit: "Далее"
+
+  admin:
+    tests:
+      create:
+        success: "Тест успешно создан"
+      index:
+        header: "Доступные тесты"
+      new:
+        header: "Создайте новый тест"
+      edit: 
+        header: "Реадктирование теста"
+    
+  navigation:
+    links:
+      show: "Просмотр"
+      new: "Создать новый тест"
+      edit: "Редактировать"
+      delete: 
+        method: "Удалить"
+        confirm: "Подтвердите удаление"
+      to_all_tests: "Назад ко всем тестам"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы прошли тест на TestGuru"
