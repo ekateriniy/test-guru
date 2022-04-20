@@ -18,7 +18,7 @@ module TestGuru
     # in config/environments, which are processed later.
     
     config.time_zone = "Singapore"
-    config.i18n.default_locale = :en
+    config.i18n.default_locale = :ru
     config.i18n.available_locales = [:en, :ru]
     # config.eager_load_paths << Rails.root.join("extras")
   end
