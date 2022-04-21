@@ -1,11 +1,15 @@
-<h2><%= t('.header') %></h2>
+<div class="row justify-content-center">
+  <div class="col col-md-8">
+    <h2 class="text-center"><%= t('.header') %></h2>
 
-<table>
-  <tr>
-    <th><%= t('.body.title') %></th>
-    <th><%= t('.body.level') %></th>
-    <th><%= t('.body.questions') %></th>
-    <th><%= t('.body.action') %></th>
-  </tr>
-  <%= render @tests %>
-</table>
+      <table class="table mt-4">
+        <tr class="fs-5">
+          <th scope="col"><%= t('.body.title') %></th>
+          <th scope="col"><%= t('.body.level') %></th>
+          <th scope="col"><%= t('.body.questions') %></th>
+          <th scope="col"><%= t('.body.action') %></th>
+        </tr>
+        <%= render @tests %>
+      </table>
+  </div>
+</div>
