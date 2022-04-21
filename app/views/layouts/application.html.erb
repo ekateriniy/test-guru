@@ -2,32 +2,25 @@
 <html>
   <head>
     <title>TestGuru</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1 shrink-to-fit=no">
+    
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <ul class="nav ul">
-      <% if user_signed_in? %>
-        <li class="nav user"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-        <li class="nav user"><b> Welcome, <%= current_user.first_name %> Guru</b></li>
-      <% else %>
-        <li class="nav user"><%= link_to 'Sign Un', new_user_registration_path %></li>
-        <li class="nav user"><%= link_to 'Log In', new_user_session_path %></li>
-      <% end %>
+    <%= render 'shared/nav' %>
 
-      <li float: left><b><%= link_to 'TestGuru', root_path %></b></li>
-    </ul>
-
+    <div class="container">
     <%= render 'shared/flash' %>
-
     <p>
     <%= yield %>
     </p>
+  </div>
     <%= render 'shared/footer' %>
   </body>
 </html>
