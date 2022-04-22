@@ -38,6 +38,9 @@ en:
       header: "Passing the %{title} test"
       current_question: "Question %{current} out of %{total}"
       submit: "Next"
+    gist:
+      success: "Gist успешно сохранен!"
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     tests:

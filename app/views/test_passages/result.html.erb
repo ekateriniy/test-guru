@@ -2,11 +2,11 @@
 
 <% if @test_passage.pass? %>
   <p>
-  <%= t('.success_html') %><span id="success"><%= @test_passage.correct_questions %></span>
+  <%= t('.success_html') %><span class="text-danger"><%= @test_passage.correct_questions %></span>
   </p>
 <% else %>
   <p>
-  <%= t('.fail_html') %><span id="fail"><%= @test_passage.correct_questions %></span>
+  <%= t('.fail_html') %><span class="text-success"><%= @test_passage.correct_questions %></span>
   </p>
 <% end %>  
 
