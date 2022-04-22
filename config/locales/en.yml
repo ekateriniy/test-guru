@@ -38,9 +38,10 @@ en:
       header: "Passing the %{title} test"
       current_question: "Question %{current} out of %{total}"
       submit: "Next"
-    gist:
-      success_html: "Gist has been successfully created: "
-      failure: "An error has occured while saving gist"
+    
+  gists:
+    success_html: "Gist has been successfully created: "
+    failure: "An error has occured while saving gist"
 
   admin:
     tests:

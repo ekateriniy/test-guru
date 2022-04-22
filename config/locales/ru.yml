@@ -40,9 +40,10 @@ ru:
       header: "Вы проходите %{title} тест"
       current_question: "Вопрос %{current} из %{total}"
       submit: "Далее"
-    gist:
-      success_html: "Gist успешно сохранен: "
-      failure: "Во время сохранения gist произошла ошибка"
+
+  gists:
+    success_html: "Gist успешно сохранен: "
+    failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     tests:
