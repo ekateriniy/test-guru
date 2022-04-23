@@ -1,13 +1,12 @@
 class GistsController < ApplicationController
   def create
     @test_passage = TestPassage.find(params[:id])
-    @gist = GistQuestionService.new(@test_passage.current_question).call
+    @result = GistQuestionService.new(@test_passage.current_question).call
 
-    if @gist[:html_url]
+    if @result.success?
       Gist.create!(gist_params)
 
-      flash_options = { notice: "#{t('.success_html')} #{view_context.link_to 'Gist', @gist[:html_url]}" }
-
+      flash_options = { notice: "#{t('.success_html')} #{view_context.link_to 'Gist', @result.url}" }
     else
       flash_options = { alert: t('.failure') }
     end
@@ -18,6 +17,6 @@ class GistsController < ApplicationController
   private
 
   def gist_params
-    { url: @gist[:html_url], user: @test_passage.user, question: @test_passage.current_question }
+    { url: @result.url, user: @test_passage.user, question: @test_passage.current_question }
   end
 end
