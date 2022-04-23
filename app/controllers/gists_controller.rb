@@ -18,6 +18,6 @@ class GistsController < ApplicationController
   private
 
   def gist_params
-    {url: @gist[:html_url], user: @test_passage.user, question: @test_passage.current_question}
+    { url: @gist[:html_url], user: @test_passage.user, question: @test_passage.current_question }
   end
 end

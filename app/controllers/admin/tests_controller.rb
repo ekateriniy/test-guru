@@ -1,5 +1,4 @@
 class Admin::TestsController < Admin::BaseController
-  
   before_action :set_test, only: [:show, :update, :edit, :destroy, :start]
 
   def index
@@ -14,8 +13,7 @@ class Admin::TestsController < Admin::BaseController
     @test = Test.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @test = current_user.created_tests.build(test_params)
