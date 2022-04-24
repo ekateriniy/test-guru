@@ -1,7 +1,7 @@
 class GistQuestionService
   Result = Struct.new(:url) do
     def success?
-      !:url.nil?
+      url.present?
     end
   end
 
