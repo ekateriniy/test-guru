@@ -1,6 +1,6 @@
 class Admin::AnswersController < Admin::BaseController
-  before_action :set_question, only: %i[ new create ]
-  before_action :set_answer, only: %i[ show edit update destroy ]
+  before_action :set_question, only: %i[new create]
+  before_action :set_answer, only: %i[show edit update destroy]
 
   def show; end
 
@@ -21,11 +21,11 @@ class Admin::AnswersController < Admin::BaseController
   end
 
   def update
-      if @answer.update(answer_params)
-        redirect_to admin_answer_path(@answer)
-      else
-        render :edit
-      end
+    if @answer.update(answer_params)
+      redirect_to admin_answer_path(@answer)
+    else
+      render :edit
+    end
   end
 
   def destroy

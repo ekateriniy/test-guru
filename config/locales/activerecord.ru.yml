@@ -2,6 +2,8 @@ ru:
   activerecord:
     model:
       test: "Тест"
+      question: "Вопрос"
+      user: "Пользователь"
 
     attributes:
       test:
