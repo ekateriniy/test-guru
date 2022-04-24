@@ -32,13 +32,14 @@ gem 'bootsnap', '>= 1.4.4', require: false
 # Authentication
 gem 'devise', '~> 4.0'
 
-# css
-gem 'jquery-rails'
+# UI
 gem 'bootstrap', '~> 5.1.3'
+gem 'jquery-rails'
+gem 'octicons_helper'
 
 # ex-default gems to work with emails
-gem 'net-smtp'
 gem 'net-imap'
+gem 'net-smtp'
 gem 'net-pop'
 
 # GitHub api client

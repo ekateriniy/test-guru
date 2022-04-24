@@ -7,7 +7,11 @@
 
     <table class="table table-hover mt-4">
       <tr class="fs-5">
-        <th scope="col"><%= t('tests.index.body.title') %></th>
+        <th scope="col" class="sort-by-title pointer">
+          <%= t('tests.index.body.title') %>
+          <%= octicon 'arrow-up', class: 'text-success hide' %>
+          <%= octicon 'arrow-down', class: 'text-success hide' %>
+        </th>
         <th scope="col"><%= t('tests.index.body.level') %></th>
         <th scope="col"><%= t('tests.index.body.questions') %></th>
         <th class="text-center" colspan="3"><%= t('tests.index.body.action') %></th>
