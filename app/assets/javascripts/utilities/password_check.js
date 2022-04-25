@@ -1,11 +1,26 @@
-function passwordCheck() {
-  var password = document.querySelector('input[id=user_password]');
-  var confirmation = document.querySelector('input[id=user_password_confirmation]');
-  var confirm_window = document.getElementById("confirm")
+document.addEventListener('turbolinks:load', function() {
+  const inputForm = document.querySelector('form')
+  const password = inputForm.querySelector('input[id=user_password]')
+  const confirmation = inputForm.querySelector('input[id=user_password_confirmation]')
   
+  inputForm.addEventListener('input', function() {
+    if (confirmation.value !== '') {passwordCheck(password, confirmation)}
+  })
+})
+
+function passwordCheck(password, confirmation) {
+
+  let correctIconClassList = document.querySelector('.octicon-check').classList
+  let wrongIconClassList = document.querySelector('.octicon-x').classList
+
   if (confirmation.value === password.value) {
-      confirm_window.style.color = 'green';
-    } else if (confirmation.value != '' && confirmation.value !== password.value) {
-      confirm_window.style.color = 'red';
-    }
+    correctIconClassList.remove('hide')
+    wrongIconClassList.add('hide')
+  } else if (confirmation.value !== password.value) {
+    correctIconClassList.add('hide')
+    wrongIconClassList.remove('hide')
+  } else {
+    correctIconClassList.add('hide')
+    wrongIconClassList.add('hide')
+  }
 }
