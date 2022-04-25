@@ -24,15 +24,20 @@ function sortRowsByTitle () {
   }
 
   var sortedTable = document.createElement('table')
+  var thead = document.createElement('thead')
+  var tbody = document.createElement('tbody')
   
-  sortedTable.classList.add('table')
-  sortedTable.appendChild(rows[0])
+  sortedTable.classList.add('table', 'table-hover', 'mt-4')
+  thead.appendChild(rows[0])
+  sortedTable.appendChild(thead)
 
   for (var i = 0; i < sortedRows.length; i ++) {
-    sortedTable.appendChild(sortedRows[i])
+    tbody.appendChild(sortedRows[i])
+    sortedTable.appendChild(tbody)
   }
 
   table.parentNode.replaceChild(sortedTable, table)
+}
 
   function compareRowsAsc(row1, row2) {
     var testTitle1 = row1.querySelector('td').textContent
@@ -51,4 +56,3 @@ function sortRowsByTitle () {
     if (testTitle1 > testTitle2) { return -1 }
     return 0
   }
-}
