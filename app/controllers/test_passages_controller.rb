@@ -1,5 +1,5 @@
 class TestPassagesController < ApplicationController
-  before_action :set_test_passage, on: %i[show result update ]
+  before_action :set_test_passage, on: %i[show result update]
 
   def show; end
 
