@@ -1,17 +1,18 @@
 document.addEventListener('turbolinks:load', function() {
   const inputForm = document.querySelector('form')
-  const password = inputForm.querySelector('input[id=user_password]')
-  const confirmation = inputForm.querySelector('input[id=user_password_confirmation]')
+  const confirmation = inputForm.elements.user_password_confirmation
+  const password = inputForm.elements.user_password
   
-  inputForm.addEventListener('input', function() {
-    if (confirmation.value !== '') {passwordCheck(password, confirmation)}
-  })
+  if (inputForm) {inputForm.addEventListener('input', function() {
+    if ((confirmation) && (confirmation.value !== '')) {
+      changeIcon(password, confirmation)
+    }
+  })}
 })
 
-function passwordCheck(password, confirmation) {
-
-  let correctIconClassList = document.querySelector('.octicon-check').classList
-  let wrongIconClassList = document.querySelector('.octicon-x').classList
+function changeIcon(password, confirmation) {
+  let correctIconClassList = confirmation.parentNode.querySelector('.octicon-check').classList
+  let wrongIconClassList = confirmation.parentNode.querySelector('.octicon-x').classList
 
   if (confirmation.value === password.value) {
     correctIconClassList.remove('hide')
