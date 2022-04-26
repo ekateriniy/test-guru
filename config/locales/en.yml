@@ -53,6 +53,8 @@ en:
         header: "Create new test"
       edit:
         header: "Edit the test"
+      form_inline:
+        submit: "OK"
 
   navigation:
     links:
