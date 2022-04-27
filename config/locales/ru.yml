@@ -55,6 +55,8 @@ ru:
         header: "Создайте новый тест"
       edit: 
         header: "Реадктирование теста"
+      form_inline:
+        submit: "ОК"
     
   navigation:
     links:
