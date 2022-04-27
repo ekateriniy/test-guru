@@ -15,7 +15,7 @@
 #   ]
 # )
 
-users = [User.first, User.last]
+users = [User.first]
 
 categories = Category.create!(
   [
