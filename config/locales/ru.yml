@@ -28,6 +28,8 @@ ru:
         level: "Уровень"
         questions: "Кол-во вопросов"
         action: "Действие"
+    start: 
+      no_questions: 'Вы не можете проходить тест без вопросов'
     test: 
       start_button: "Старт"
 

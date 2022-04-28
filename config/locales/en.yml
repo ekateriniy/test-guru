@@ -26,6 +26,8 @@ en:
         level: "Level"
         questions: "Questions"
         action: "Action"
+    start: 
+      no_questions: 'You can not take test with 0 question'
     test: 
       start_button: "Start"
 
