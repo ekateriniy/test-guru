@@ -1,11 +1,11 @@
 <p>
-<%= link_to 'New question', new_admin_test_question_path(@test) %>
+<%= link_to t('navigation.links.new_question'), new_admin_test_question_path(@test) %>
 </p>
 
 <table>
   <tr>
-    <th>Questions</th>
-    <th class="text-center" colspan="3">Actions</th>
+    <th><%= t('.head') %></th>
+    <th class="text-center" colspan="3"><%= t('navigation.actions') %></th>
   </tr>
 
   <%= render @test.questions %>

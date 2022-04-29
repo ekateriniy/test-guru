@@ -3,12 +3,12 @@
     <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
     <span class="navbar-text">
       <% if user_signed_in? %>
-        <b> Welcome, <%= current_user.first_name %> Guru</b> |
-        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <b><%= t('layout.greeting', name: current_user.first_name) %></b> |
+        <%= link_to t('layout.sign_out'), destroy_user_session_path, method: :delete %>
           
         <% else %>
-          <%= link_to 'Sign Up', new_user_registration_path %>
-          <%= link_to 'Log In', new_user_session_path %>
+          <%= link_to t('layout.sign_up'), new_user_registration_path %>
+          <%= link_to t('layout.log_in'), new_user_session_path %>
         <% end %>
     </span>
   </div>

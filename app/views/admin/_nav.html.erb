@@ -4,7 +4,7 @@
   
   <div class="nav-admin user">
     <span class="navbar-text">
-      <b>Welcome, <%= current_user.first_name %></b> |
+      <b><%= t('layout.greeting', name: current_user.first_name) %></b> |
         <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
       </span>
     </div>

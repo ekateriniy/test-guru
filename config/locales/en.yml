@@ -4,6 +4,12 @@ en:
       test:
         create: "Create test"
         update: "Update test"
+    question:
+        create: "Create question"
+        update: "Update question"
+    answer:
+      create: "Create answer"
+      update: "Update answer"
     label:
       test:
         title: "Title"
@@ -13,10 +19,18 @@ en:
       prompt: "Please select:"
 
   shared:
+    footer:
+      about_app: "the app to create, manage and take different tests."
     errors:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+
+  layout:
+    greeting: "Welcome, %{name} Guru"
+    sign_up: "Sign up"
+    log_in: "Log in"
+    sign_out: "Sign out"
 
   tests:
     index:
@@ -57,16 +71,36 @@ en:
         header: "Edit the test"
       form_inline:
         submit: "OK"
+    questions:
+      list:
+        head: "Question"
+      show:
+        head: "Question"
+        answers: "Answers"
+    answers:
+      show:
+        head: "Question"
+        answer: "Answer"
+        correct: "Correct"
+      edit:
+        head: "Edit the Answer"
+      new:
+        head: "New answer"
 
   navigation:
+    actions: "Actions"
     links:
       show: "Show"
-      new: "New test"
+      new_test: "New test"
+      new_question: "New question"
+      new_answer: "New answer"
       edit: "Edit"
       delete: 
         method: "Delete"
         confirm: "Are you sure?"
       to_all_tests: "Back to all tests"
+      to_all_questions: "Back to all questions"
+      to_all_answers: "Back to all answers"
 
   tests_mailer:
     completed_test:

@@ -4,6 +4,12 @@ ru:
       test:
         create: "Создать тест"
         update: "Обновить тест"
+      question:
+        create: "Создать вопрос"
+        update: "Обновить вопрос"
+      answer:
+        create: "Создать ответ"
+        update: "Обновить ответ"
     label:
       test:
         title: "Название"
@@ -13,12 +19,20 @@ ru:
       prompt: "Выберите:"
 
   shared:
+    footer:
+      about_app: "приложение для создания, редактирования и прохождения тестов"
     errors:
       header:
         one: "Обнаружена %{count} ошибка"
         few: "Обнаружено %{count} ошибки"
         many: "Обнаружено %{count} ошибок"
         other: "Обнаружено %{count} ошибки"
+
+  layout:
+    greeting: "Добро пожаловать, %{name} Guru"
+    sign_up: "Зарегистрироваться"
+    log_in: "Войти"
+    sign_out: "Выйти"
 
   tests:
     index:
@@ -59,16 +73,37 @@ ru:
         header: "Реадктирование теста"
       form_inline:
         submit: "ОК"
+    questions:
+      list:
+        head: "Вопрос"
+      show:
+        answers: "Ответы"
+        head: "Вопрос"
+    answers:
+      show:
+        head: "Вопрос"
+        answer: "Ответ"
+        correct: "Правильный ответ"
+      edit:
+        head: "Редактирование ответа"
+      new:
+        head: "Создайте новый ответ"
+
     
   navigation:
+    actions: "Действия"
     links:
       show: "Просмотр"
-      new: "Создать новый тест"
+      new_test: "Создать новый тест"
+      new_question: "Создать новый вопрос"
+      new_answer: "Создать новый ответ"
       edit: "Редактировать"
       delete: 
         method: "Удалить"
         confirm: "Подтвердите удаление"
       to_all_tests: "Назад ко всем тестам"
+      to_all_questions: "Назад ко всем вопросам"
+      to_all_answers: "Назад ко всем ответам"
 
   tests_mailer:
     completed_test:

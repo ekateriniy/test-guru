@@ -4,10 +4,16 @@ en:
       test: "Test"
       question: "Question"
       user: "User"
+      answer: "Answer"
 
     attributes:
       test:
         title: "Title"
+      question:
+        body: "Body"
+      answer:
+        body: "Body"
+        correct: "Correct"
 
     errors:
       messages:
