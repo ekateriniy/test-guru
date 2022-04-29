@@ -63,3 +63,7 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+
+  links:
+    forgot_password: "Forgot your password?"
+    no_confirm_instruction: "Didn't receive confirmation instructions?"
