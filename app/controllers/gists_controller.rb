@@ -6,7 +6,7 @@ class GistsController < ApplicationController
     if @result.success?
       Gist.create!(gist_params)
 
-      flash_options = { notice: "#{t('.success_html')} #{view_context.link_to 'Gist', @result.url}" }
+      flash_options = { notice: "#{t('.success_html')} #{view_context.gist_url(@result.url)}" }
     else
       flash_options = { alert: t('.failure') }
     end

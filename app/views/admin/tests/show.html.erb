@@ -8,9 +8,9 @@
 <%= @test.level %>
 </p>
 
-<p>
-<%= render 'admin/questions/list' %>
-</p>
+<table class="table mt-6">
+  <%= render 'admin/questions/list' %>
+</table><br>
 
 <%= link_to t('navigation.links.edit'), edit_admin_test_path(@test) %> |
 <%= link_to t('navigation.links.to_all_tests'), admin_tests_path %>

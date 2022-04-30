@@ -4,10 +4,16 @@ ru:
       test: "Тест"
       question: "Вопрос"
       user: "Пользователь"
+      answer: "Ответ"
 
     attributes:
       test:
         title: "Название"
+      question:
+        body: "Текст"
+      answer:
+        body: "Текст"
+        correct: "Правильный ответ"
 
     errors:
       messages:

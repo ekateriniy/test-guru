@@ -4,7 +4,7 @@ module ApplicationHelper
   end
 
   def github_url(author, repo)
-    link_to repo.capitalize, "https://github.com/#{author}/#{repo}"
+    link_to repo.capitalize, "https://github.com/#{author}/#{repo}", target: '_blank', rel: 'nofollow noopener'
   end
 
   def flash_message(type)
