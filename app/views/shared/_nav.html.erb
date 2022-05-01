@@ -4,6 +4,7 @@
     <span class="navbar-text">
       <% if user_signed_in? %>
         <b><%= t('layout.greeting', name: current_user.first_name) %></b> |
+        <%= link_to 'Badges', badges_path %> | 
         <%= link_to t('layout.sign_out'), destroy_user_session_path, method: :delete %>
           
         <% else %>

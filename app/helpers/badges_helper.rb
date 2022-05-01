@@ -1,6 +1,5 @@
 module BadgesHelper
   def badge_amount(user, badge)
-    amount = user.badges(badge).count
-    amount.zero? ? amount : ''
+    BadgesUser.user_bage_amount(user, badge).size
   end
 end

@@ -8,11 +8,11 @@ class BadgeIssuerService
     available_badges.each { |badge| @user.badges << badge }
   end
 
-  def abailable_badges
-    level_value + categery + attempts
+  def available_badges
+    level_badges + category_badges + attempts_badges
   end
 
-  def level_value
+  def level_badges
     badge = Badge.where(rule: 'level', value: @test.level)
 
     if badge.count.zero? || Test.where(level: @test.level).ids == @user.tests_on(:level, @test.level).ids
@@ -22,7 +22,7 @@ class BadgeIssuerService
     end
   end
 
-  def category_value
+  def category_badges
     badge = Badge.where(rule: 'category', value: @test.category)
 
     if badge.count.zero? || Test.where(category: @test.category).ids == @user.tests_on(:category, @test.category).ids
@@ -32,7 +32,7 @@ class BadgeIssuerService
     end
   end
 
-  def attempts
+  def attempts_badges
     Badge.where(rule: 'attempt', value: @user.tests.where(id: @test.id).count)
   end
 end
