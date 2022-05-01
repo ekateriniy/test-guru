@@ -13,8 +13,8 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'is in wrong format' }
 
-  def tests_on_level(level)
-    tests.where(level: level)
+  def tests_on(attribute, value)
+    tests.where(attribute => value)
   end
 
   def test_passage(test)
