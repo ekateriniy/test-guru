@@ -1,0 +1,8 @@
+<tr>
+  <td class="align-middle"><%= badge.title %></td>
+  <td class="align-middle"><%= badge.attribute %></td>
+  <td class="align-middle"><%= badge.value %></td>
+  <td class="align-middle"><%= link_to t('navigation.links.show'), admin_badge_path(badge) %></td>
+  <td class="align-middle"><%= link_to t('navigation.links.edit'), edit_admin_badge_path(badge) %></td>
+  <td class="align-middle"><%= link_to t('navigation.links.delete.method'), admin_badge_path(badge), method: :delete, data: { confirm: t('navigation.links.delete.confirm') } %></td>
+</tr>
