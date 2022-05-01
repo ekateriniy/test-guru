@@ -5,6 +5,7 @@
   <div class="nav-admin user">
     <span class="navbar-text">
       <b><%= t('layout.greeting', name: current_user.first_name) %></b> |
+        <%= link_to 'Badges', admin_badges_path %> | 
         <%= link_to t('layout.sign_out'), destroy_user_session_path, method: :delete %>
       </span>
     </div>

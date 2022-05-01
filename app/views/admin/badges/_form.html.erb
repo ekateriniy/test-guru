@@ -7,12 +7,17 @@
 
   <p>
     <%= form.label :rule %>
-    <%= form.select :badge, :rule, Badge.rules %>
+    <%= form.select :rule, Badge.rules.keys %>
   </p>
 
   <p>
     <%= form.label :value %>
     <%= form.text_field :value, id: :badge_value %>
+  </p>
+
+  <p>
+    <%= form.label :image %>
+    <%= form.text_field :image, id: :badge_image %>
   </p>
 
   <p><%= form.submit %></p>
