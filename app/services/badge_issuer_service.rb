@@ -5,24 +5,24 @@ class BadgeIssuerService
   end
 
   def call
-    available_badges.each { |badge| @user.badges << badge }
+    available_badges.map { |badge| send(badge) }
   end
 
   def available_badges
-    level_badges + category_badges + attempts_badges
+    self.methods.select { |method| method.to_s.match?(/badges_for_/) }
   end
 
-  def level_badges
+  def badges_for_level
     badge = Badge.where(rule: 'level', value: @test.level)
 
-    if badge.count.zero? || Test.where(level: @test.level).ids == @user.tests_on(:level, @test.level).ids
+    if badge.count.zero? || Test.where(level: @test.level).ids != @user.tests_on(:level, @test.level).ids
       Badge.none
     else
       badge
     end
   end
 
-  def category_badges
+  def badges_for_category
     badge = Badge.where(rule: 'category', value: @test.category)
 
     if badge.count.zero? || Test.where(category: @test.category).ids == @user.tests_on(:category, @test.category).ids
@@ -32,7 +32,7 @@ class BadgeIssuerService
     end
   end
 
-  def attempts_badges
+  def badges_for_attempts
     Badge.where(rule: 'attempt', value: @user.tests.where(id: @test.id).count)
   end
 end

@@ -10,7 +10,11 @@ class TestPassagesController < ApplicationController
 
     if @test_passage.completed?
       TestsMailer.complited_test(@test_passage).deliver_now
-      BadgeIssuerService.new(@test_passage).call if @test_passage.pass?
+      if @test_passage.pass?
+        badges = BadgeIssuerService.new(@test_passage).call
+        @test_passage.user.badges.push(badges)
+      end
+
       redirect_to result_test_passage_path(@test_passage)
     else
       render :show
