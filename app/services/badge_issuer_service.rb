@@ -2,37 +2,34 @@ class BadgeIssuerService
   def initialize(test_passage)
     @user = test_passage.user
     @test = test_passage.test
+    # @test_passage = test_passage
   end
 
   def call
-    available_badges.map { |badge| send(badge) }
-  end
-
-  def available_badges
-    self.methods.select { |method| method.to_s.match?(/badges_for_/) }
-  end
-
-  def badges_for_level
-    badge = Badge.where(rule: 'level', value: @test.level)
-
-    if badge.count.zero? || Test.where(level: @test.level).ids != @user.tests_on(:level, @test.level).ids
-      Badge.none
-    else
-      badge
+    Badge.all.select do |badge|
+      send("badges_for_#{badge.rule}", badge.value)
     end
   end
 
-  def badges_for_category
-    badge = Badge.where(rule: 'category', value: @test.category)
-
-    if badge.count.zero? || Test.where(category: @test.category).ids == @user.tests_on(:category, @test.category).ids
-      Badge.none
+  def badges_for_level(level)
+    if @test.level == level.to_i
+      tests_ids = Test.where(level: level).ids
+      tests_ids.count == TestPassage.passed_tests_by_user(@user.id, tests_ids).ids.count
     else
-      badge
+      false
     end
   end
 
-  def badges_for_attempts
-    Badge.where(rule: 'attempt', value: @user.tests.where(id: @test.id).count)
+  def badges_for_category(category)
+    if @test.category.title == category
+      tests_ids = Test.where(category: category).ids
+      tests_ids.count == TestPassage.passed_tests_by_user(@user.id, tests_ids).ids.count
+    else
+      false
+    end
+  end
+
+  def badges_for_attempt(_attempt)
+    TestPassage.where(user_id: @user.id, test_id: @test.id).count == 1
   end
 end

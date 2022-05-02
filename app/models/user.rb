@@ -13,10 +13,6 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: 'is in wrong format' }
 
-  def tests_on(attribute, value)
-    tests.where(attribute => value)
-  end
-
   def test_passage(test)
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
