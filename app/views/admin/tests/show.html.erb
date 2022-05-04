@@ -8,6 +8,11 @@
 <%= @test.level %>
 </p>
 
+<p>
+<strong><%= t('tests.index.body.time') %>: </strong>
+<%= @test.time %>
+</p>
+
 <table class="table mt-6">
   <%= render 'admin/questions/list' %>
 </table><br>

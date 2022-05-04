@@ -41,6 +41,7 @@ ru:
         title: "Название"
         level: "Уровень"
         questions: "Кол-во вопросов"
+        time: "Время (если требуется)"
         action: "Действие"
     start: 
       no_questions: 'Вы не можете проходить тест без вопросов'
@@ -49,7 +50,7 @@ ru:
 
   test_passages:
     result:
-      header: "Тест %{title} был успешно завершен"
+      header: "Тест %{title} завершен"
       success_html: "Вы прошли тест! <br>Ваш результат:"
       fail_html: "Вы не прошли тест. <br>Ваш результат:"
     show:
