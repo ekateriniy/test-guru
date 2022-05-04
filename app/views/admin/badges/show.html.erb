@@ -1,0 +1,18 @@
+<p>
+<strong>Title: </strong>
+<%= @badge.title.capitalize %>
+</p>
+
+<p>
+<strong>Rule: </strong>
+<%= @badge.rule %>
+</p>
+
+<p>
+<strong>Rule value: </strong>
+<%= @badge.value %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_badge_path(@badge) %> |
+<%= link_to 'Back to all badges', admin_badges_path %>
