@@ -7,6 +7,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :set_current_question
 
+  scope :passed_tests_by_user, ->(user_id, tests_id) { where(passed: true, user_id: user_id, test_id: tests_id) }
+
   def completed?
     current_question.nil?
   end
