@@ -18,8 +18,7 @@ function startTimer(duration, display) {
         display.textContent = minutes + ":" + seconds
 
         if (--timer < 0) {
-          const path = window.location
-          window.location.href = path + '/result'
+          document.forms[0].submit()
         }
     }, 1000)
 }

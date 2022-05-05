@@ -6,6 +6,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_validation :set_current_question
+  before_update :check_timer
 
   scope :passed_tests_by_user, ->(user_id, tests_id) { where(passed: true, user_id: user_id, test_id: tests_id) }
 
@@ -15,7 +16,7 @@ class TestPassage < ApplicationRecord
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
-    
+
     save!
   end
 
@@ -31,6 +32,12 @@ class TestPassage < ApplicationRecord
 
   def set_current_question
     self.current_question = next_question
+  end
+
+  def check_timer
+    if test.has_timer? && (created_at + test.time.minutes < Time.current)
+      self.current_question = nil
+    end
   end
 
   def correct_answer?(answer_ids)
