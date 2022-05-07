@@ -9,6 +9,7 @@ ru:
     attributes:
       test:
         title: "Название"
+        time: "Время (если требуется)"
       question:
         body: "Текст"
       answer:

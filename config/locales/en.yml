@@ -39,6 +39,7 @@ en:
         title: "Title"
         level: "Level"
         questions: "Questions"
+        time: "Time (if required)"
         action: "Action"
     start: 
       no_questions: 'You can not take test with 0 question'
@@ -47,7 +48,7 @@ en:
 
   test_passages:
     result:
-      header: "Test %{title} has been successfully finished"
+      header: "Test %{title} has been finished"
       success_html: "You passed the test! <br>The score is:"
       fail_html: "You didn't pass the test. <br>The score is:"
     show:

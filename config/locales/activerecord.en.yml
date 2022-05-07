@@ -9,6 +9,7 @@ en:
     attributes:
       test:
         title: "Title"
+        time: "Time (if required)"
       question:
         body: "Body"
       answer:

@@ -5,6 +5,7 @@
   </td>
   <td class="align-middle"><%= test.level %></td>
   <td class="align-middle"><%= test.questions.count %></td>
+  <td class="align-middle"><%= test.time %></td>
   <td class="align-middle"><%= link_to t('navigation.links.show'), admin_test_path(test) %></td>
   <td class="align-middle"><%= link_to t('navigation.links.edit'), edit_admin_test_path(test), data: {test_id: test.id}, class: 'form-inline-link' %></td>
   <td class="align-middle"><%= link_to t('navigation.links.delete.method'), admin_test_path(test), method: :delete, data: { confirm: t('navigation.links.delete.confirm') } %></td>

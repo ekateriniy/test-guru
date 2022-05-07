@@ -11,8 +11,13 @@
   </p>
 
   <p>
-    <%= form.label :category_id %>
+    <%= form.label :category_id %><br>
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+  </p>
+
+  <p>
+    <%= form.label :time %><br>
+    <%= form.number_field :time, id: :test_time %>
   </p>
 
   <p><%= form.submit %></p>

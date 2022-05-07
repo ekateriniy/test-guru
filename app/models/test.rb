@@ -18,4 +18,8 @@ class Test < ApplicationRecord
   def self.category_titles_desc(category)
     by_category_desc(category).pluck(:title)
   end
+
+  def has_timer?
+    time.present?
+  end
 end
